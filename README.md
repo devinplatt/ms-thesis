@@ -1,6 +1,6 @@
 # ms-thesis
 
-This repository is provided so that anyone can repeat experiments similar to those done in my Master's thesis.
+This repository is provided so that anyone can repeat experiments similar to those done in my Master's thesis (https://escholarship.org/uc/item/3137p3v0).
 
 In my thesis I used audio clips from the Million Song Dataset, which are not generally available to the public. In this repository, I have included instructions using the smaller, but easily downloaded, Free Music Archive dataset.
 
