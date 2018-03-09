@@ -4,4 +4,4 @@ latent_factors/output/LastFM-1b_matrix_merged.npz
 
 
 # Jupyter Notebook
-.ipynb_checkpoints
+latent_factors/eval/.ipynb_checkpoints/*
