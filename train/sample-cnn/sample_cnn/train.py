@@ -171,7 +171,8 @@ def train(initial_lr,
                                 checkpointer, csv_logger])
 
   # The end of the stage. Evaluate on test set.
-  best_ckpt_path, *_ = find_best_checkpoint(stage_train_dir)
+  #best_ckpt_path, *_ = find_best_checkpoint(stage_train_dir)
+  best_ckpt_path, _, _ = find_best_checkpoint(stage_train_dir)
   print('The end of the stage. '
         'Start evaluation on test set using checkpoint "{}"'
         .format(best_ckpt_path))
@@ -208,7 +209,9 @@ def main(unused_argv):
     learning_rate = FLAGS.initial_learning_rate * decay
 
     # Create a directory for the stage.
-    os.makedirs(stage_train_dir, exist_ok=True)
+    #os.makedirs(stage_train_dir, exist_ok=True)
+    if not os.path.exists(stage_train_dir):
+        os.makedirs(stage_train_dir)
 
     # Find the best checkpoint to load weights.
     (ckpt_path, ckpt_epoch, ckpt_val_loss) = find_best_checkpoint(
