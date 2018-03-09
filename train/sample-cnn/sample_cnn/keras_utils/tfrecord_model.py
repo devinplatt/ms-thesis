@@ -37,7 +37,7 @@ class TFRecordModel(Model):
         self.val_outputs = [val_outputs]
 
   def compile_tfrecord(self, optimizer, loss, y, metrics=None,
-                       y_val=None):
+                       y_val=None, constraints=None):
     """Configures the model for training.
 
     # Arguments
@@ -66,7 +66,7 @@ class TFRecordModel(Model):
     self.sample_weight_mode = None
     self.loss_weights = None
     self.y_val = y_val
-    self.constraints = None
+    # self.constraints = None  # removing because of Python2 setter issues
 
     do_validation = bool(len(self.val_inputs) > 0)
     if do_validation and y_val is None:
